@@ -19,7 +19,7 @@
     (total-cost)
     (flight-cost ?from ?to ?today)
     (train-cost ?from ?to ?today)
-    (hotel-cost ?place ?hotel)
+    (accommodation-cost ?place ?hotel)
 )
 
 (:action FLY
@@ -49,7 +49,7 @@
      :parameters (?pass - passenger ?city - city ?hotel - accommodations ?today - today ?tomorrow - today)
      :precondition (and (At ?pass ?city) (accommodation ?city ?hotel) (date-precedence ?today ?tomorrow) (Date ?pass ?today))
      :effect (and (slept ?pass ?city) (Date ?pass ?tomorrow) (not (Date ?pass ?today))
-
+            (increase (total-cost) (accommodation-cost ?city ?hotel))
         )
     )
 )
