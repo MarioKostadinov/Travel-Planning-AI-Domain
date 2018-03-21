@@ -10,6 +10,7 @@
             (Date ?pas - passenger ?today - day)
             (flight ?from - city ?to - city ?today - day)
             (train ?from - city ?to - city ?today - day)
+            (bus ?from - city ?to - city ?today - day)
             (visited ?pas - passenger ?city - city)
             (accommodation ?city - city ?hotel - accommodations)
             (slept ?pas - passenger ?city - city)
@@ -31,6 +32,13 @@
     )
 
 (:action TRAIN
+     :parameters (?pass - passenger ?from - city ?to - city ?today - today)
+     :precondition (and (train ?from ?to ?today) (At ?pass ?from))
+     :effect (and (At ?pass ?to) (not (At ?pass ?from))
+        )
+    )
+
+(:action BUS
      :parameters (?pass - passenger ?from - city ?to - city ?today - today)
      :precondition (and (train ?from ?to ?today) (At ?pass ?from))
      :effect (and (At ?pass ?to) (not (At ?pass ?from))
