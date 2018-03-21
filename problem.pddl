@@ -103,7 +103,7 @@
         ;;6 Day Trip
         ;;NCE SOF AMS
         ;;SLEEP 2 Days in each city
-        (and (slept Mario RDM)))
+        (and (slept Mario AMS)))
     (:metric minimize (total-cost))
 
 )
