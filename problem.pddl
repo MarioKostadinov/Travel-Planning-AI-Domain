@@ -94,7 +94,6 @@
     (= (accommodation-cost PLD airbnb-6) 21)
     (= (accommodation-cost PLD hotel-6) 31)
 
-    (= (train-cost BAR MAD d4) 54)
     )
     (:goal
         ;;6 Day Trip
