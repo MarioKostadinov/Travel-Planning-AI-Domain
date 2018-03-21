@@ -25,7 +25,7 @@
 (:action FLY
      :parameters (?pass - passenger ?from - city ?to - city ?today - today ?tomorrow - today)
      :precondition (and (flight ?from ?to ?today) (At ?pass ?from) (date-precedence ?today ?tomorrow) (Date ?pass ?today))
-     :effect (and (At ?pass ?to) (not (At ?pass ?from))
+     :effect (and (At ?pass ?to) (visited ?pass ?to) (not (At ?pass ?from))
              (increase (total-cost) (flight-cost ?from ?to ?today))
         )
     )

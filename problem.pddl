@@ -28,6 +28,7 @@
     (flight NCE SOF d3)
     (flight SOF AMS d4)
     (flight AMS LON d5)
+    (flight AMS PLD d7)
     (flight LON PLD d8)
     (flight LON SOF d5)
     (flight SOF PLD d7)
@@ -59,6 +60,7 @@
     (= (flight-cost NCE SOF d3) 10)
     (= (flight-cost SOF AMS d4) 10)
     (= (flight-cost AMS LON d5) 10)
+    (= (flight-cost AMS PLD d7) 58)
     (= (flight-cost LON PLD d8) 200)
     (= (flight-cost LON SOF d5) 10)
     (= (flight-cost SOF PLD d7) 10)
@@ -88,7 +90,7 @@
         ;;6 Day Trip
         ;;NCE SOF AMS
         ;;SLEEP 2 Days in each city
-        (and (At Mario PLD)))
+        (and (visited Mario NCE) (visited Mario BER)))
     (:metric minimize (total-cost))
 
 )
