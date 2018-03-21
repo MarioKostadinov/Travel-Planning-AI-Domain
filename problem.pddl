@@ -40,6 +40,10 @@
     (train AMS RDM d3)
     (train AMS RDM d4)
     (train AMS RDM d5)
+    (train AMS RDM d6)
+    (train AMS RDM d7)
+    (train AMS RDM d8)
+    (train AMS RDM d9)
     ;; accommodations
     (accommodation LON hostel-1)
     (accommodation LON airbnb-1)
