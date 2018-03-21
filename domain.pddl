@@ -29,19 +29,11 @@
              (increase (total-cost) (flight-cost ?from ?to ?today))
         )
     )
-;(:action FLY
-;     :parameters (?pass - passenger ?from - city ?to - city ?today - today)
-;     :precondition (and (flight ?from ?to ?today) (At ?pass ?from) (Date ?pass ?today))
-;     :effect (and (At ?pass ?to) (not (At ?pass ?from))
-;            (increase (total-cost) (flight-cost ?from ?to ?today))
-;        )
-;    )
 
 (:action TRAIN
      :parameters (?pass - passenger ?from - city ?to - city ?today - today)
      :precondition (and (train ?from ?to ?today) (At ?pass ?from))
      :effect (and (At ?pass ?to) (not (At ?pass ?from))
-            (increase (total-cost) (train-cost ?from ?to ?today))
         )
     )
 

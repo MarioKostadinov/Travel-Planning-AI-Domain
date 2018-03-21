@@ -35,6 +35,11 @@
     (flight SOF PLD d7)
     ;; Trains
     (train BAR MAD d4)
+    (train MAD BAR d3)
+    (train AMS RDM d2)
+    (train AMS RDM d3)
+    (train AMS RDM d4)
+    (train AMS RDM d5)
     ;; accommodations
     (accommodation LON hostel-1)
     (accommodation LON airbnb-1)
@@ -95,7 +100,7 @@
         ;;6 Day Trip
         ;;NCE SOF AMS
         ;;SLEEP 2 Days in each city
-        (and (slept Mario SOF) (slept Mario AMS) (At Mario SOF)))
+        (and (slept Mario RDM)))
     (:metric minimize (total-cost))
 
 )
