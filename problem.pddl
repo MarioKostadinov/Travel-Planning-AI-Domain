@@ -2,9 +2,9 @@
     (:domain travel)
     (:objects   Mario - passenger
                 LON CBR MAD BAR PAR NCE ROM VEN MIL AMS RDM BER MUN SOF PLD ATH - city
-                hostel-1 hostel-2 hostel-3 hostel-4 hostel-5 hostel-6 - hostel
-                airbnb-1 airbnb-2 airbnb-3 airbnb-4 airbnb-5 airbnb-6 - airbnb
-                hotel-1 hotel-2 hotel-3 hotel-4 hotel-5 hotel-6 - hotel
+                hostel-1 hostel-2 hostel-3 hostel-4 hostel-5 hostel-6 hostel-7 hostel-8 hostel-9 hostel-10 - hostel
+                airbnb-1 airbnb-2 airbnb-3 airbnb-4 airbnb-5 airbnb-6 airbnb-7 airbnb-8 airbnb-9 airbnb-10 - airbnb
+                hotel-1 hotel-2 hotel-3 hotel-4 hotel-5 hotel-6 hotel-7 hotel-8 hotel-9 hotel-10 - hotel
                 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 - today
 
                 )
@@ -29,6 +29,7 @@
     (flight SOF AMS d4)
     (flight AMS LON d5)
     (flight AMS PLD d7)
+    (flight BAR SOF d3)
     (flight LON PLD d8)
     (flight LON SOF d5)
     (flight SOF PLD d7)
@@ -53,17 +54,21 @@
     (accommodation PLD hostel-6)
     (accommodation PLD airbnb-6)
     (accommodation PLD hotel-6)
+    (accommodation BAR hostel-7)
+    (accommodation BAR airbnb-7)
+    (accommodation BAR hotel-7)
     (= (total-cost) 0)
     ;; flight cost
     (= (flight-cost LON NCE d1) 10)
-    (= (flight-cost NCE BER d2) 10)
-    (= (flight-cost NCE SOF d3) 10)
-    (= (flight-cost SOF AMS d4) 10)
-    (= (flight-cost AMS LON d5) 10)
+    (= (flight-cost NCE BER d2) 15)
+    (= (flight-cost NCE SOF d3) 12)
+    (= (flight-cost SOF AMS d4) 34)
+    (= (flight-cost AMS LON d5) 85)
     (= (flight-cost AMS PLD d7) 58)
-    (= (flight-cost LON PLD d8) 200)
-    (= (flight-cost LON SOF d5) 10)
-    (= (flight-cost SOF PLD d7) 10)
+    (= (flight-cost BAR SOF d3) 28)
+    (= (flight-cost LON PLD d8) 123)
+    (= (flight-cost LON SOF d5) 149)
+    (= (flight-cost SOF PLD d7) 123)
     ;; accommodation cost
     (= (accommodation-cost LON hostel-1) 11)
     (= (accommodation-cost LON airbnb-1) 21)
