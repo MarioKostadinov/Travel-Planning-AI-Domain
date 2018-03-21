@@ -2,9 +2,9 @@
     (:domain travel)
     (:objects   Mario - passenger
                 LON CBR MAD BAR PAR NCE ROM VEN MIL AMS RDM BER MUN SOF PLD ATH - city
-                hostel-1 hostel-2 hostel-3 hostel-4 hostel-5 - hostel
-                airbnb-1 airbnb-2 airbnb-3 airbnb-4 airbnb-5 - airbnb
-                hotel-1 hotel-2 hotel-3 hotel-4 hotel-5 - hotel
+                hostel-1 hostel-2 hostel-3 hostel-4 hostel-5 hostel-6 - hostel
+                airbnb-1 airbnb-2 airbnb-3 airbnb-4 airbnb-5 airbnb-6 - airbnb
+                hotel-1 hotel-2 hotel-3 hotel-4 hotel-5 hotel-6 - hotel
                 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 - today
 
                 )
@@ -50,9 +50,9 @@
     (accommodation AMS hostel-5)
     (accommodation AMS airbnb-5)
     (accommodation AMS hotel-5)
-    (accommodation PLD hostel-5)
-    (accommodation PLD airbnb-5)
-    (accommodation PLD hotel-5)
+    (accommodation PLD hostel-6)
+    (accommodation PLD airbnb-6)
+    (accommodation PLD hotel-6)
     (= (total-cost) 0)
     ;; flight cost
     (= (flight-cost LON NCE d1) 10)
@@ -68,21 +68,21 @@
     (= (accommodation-cost LON hostel-1) 11)
     (= (accommodation-cost LON airbnb-1) 21)
     (= (accommodation-cost LON hotel-1) 31)
-    (= (accommodation-cost NCE hostel-1) 11)
-    (= (accommodation-cost NCE airbnb-1) 21)
-    (= (accommodation-cost NCE hotel-1) 31)
-    (= (accommodation-cost BER hostel-1) 11)
-    (= (accommodation-cost BER airbnb-1) 21)
-    (= (accommodation-cost BER hotel-1) 31)
-    (= (accommodation-cost SOF hostel-1) 11)
-    (= (accommodation-cost SOF airbnb-1) 21)
-    (= (accommodation-cost SOF hotel-1) 31)
-    (= (accommodation-cost AMS hostel-1) 11)
-    (= (accommodation-cost AMS airbnb-1) 21)
-    (= (accommodation-cost AMS hotel-1) 31)
-    (= (accommodation-cost PLD hostel-1) 11)
-    (= (accommodation-cost PLD airbnb-1) 21)
-    (= (accommodation-cost PLD hotel-1) 31)
+    (= (accommodation-cost NCE hostel-2) 11)
+    (= (accommodation-cost NCE airbnb-2) 21)
+    (= (accommodation-cost NCE hotel-2) 31)
+    (= (accommodation-cost BER hostel-3) 11)
+    (= (accommodation-cost BER airbnb-3) 21)
+    (= (accommodation-cost BER hotel-3) 31)
+    (= (accommodation-cost SOF hostel-4) 11)
+    (= (accommodation-cost SOF airbnb-4) 21)
+    (= (accommodation-cost SOF hotel-4) 31)
+    (= (accommodation-cost AMS hostel-5) 11)
+    (= (accommodation-cost AMS airbnb-5) 21)
+    (= (accommodation-cost AMS hotel-5) 31)
+    (= (accommodation-cost PLD hostel-6) 11)
+    (= (accommodation-cost PLD airbnb-6) 21)
+    (= (accommodation-cost PLD hotel-6) 31)
 
     (= (train-cost BAR MAD d4) 54)
     )
@@ -90,7 +90,7 @@
         ;;6 Day Trip
         ;;NCE SOF AMS
         ;;SLEEP 2 Days in each city
-        (and (visited Mario NCE) (visited Mario BER)))
+        (and (slept Mario SOF) (slept Mario AMS) (At Mario SOF)))
     (:metric minimize (total-cost))
 
 )
